@@ -6,7 +6,10 @@
  * MARTIN Alexandre <alexandre.martin@efrei.net>
  */
 
+// Require tables
 permutationsTable = require('./tables/permutations')
+expansionTable = require('./tables/expansion')
+// Require functions
 permutations = require('./lib/permutations')
 
 message = [
@@ -19,6 +22,6 @@ message = [
   61, 62, 63, 64
 ]
 
-message = permutations.initialPermutation(message, permutationsTable.initPerm)
-console.log(permutations.splitMessage(message)[0])
-console.log(permutations.splitMessage(message)[1])
+message = permutations.permutation(message, permutationsTable.initPerm)
+message = permutations.splitMessage(message)
+console.log(permutations.permutation(message[1], expansionTable))
