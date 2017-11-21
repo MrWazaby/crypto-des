@@ -6,11 +6,21 @@
  * MARTIN Alexandre <alexandre.martin@efrei.net>
  */
 
-var value = 0;
+var key = "";
 
-for(var i = 0; i < 64; i++) {
-  value += Math.floor((Math.random() * 10) % 2)
-  if (i !== 63) value += ', '
+for(var i = 0; i < 8; i++) {
+  var total = 0
+
+  for(var j = 0; j < 7; j++) {
+    var value = Math.floor((Math.random() * 10) % 2)
+    key += value + ', '
+    total += value
+  }
+
+  key += 1 - (total % 2)
+  if(i !== 7) key += ', '
+  key += '\n'
+  if(i !== 7) key += '\t'
 }
 
-console.log('[' + value + ']')
+console.log('[\n\t' + key + ']')
