@@ -19,4 +19,6 @@ message = [
   61, 62, 63, 64
 ]
 
-console.log(permutations.initialPermutation(message, permutationsTable.initPerm))
+message = permutations.initialPermutation(message, permutationsTable.initPerm)
+console.log(permutations.splitMessage(message)[0])
+console.log(permutations.splitMessage(message)[1])
