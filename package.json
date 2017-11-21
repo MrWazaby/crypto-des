@@ -1,0 +1,19 @@
+{
+  "name": "crypto-des",
+  "version": "1.0.0",
+  "description": "Data Encryption Standard",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrWazaby/crypto-des.git"
+  },
+  "author": "Alexandre Martin <alexandre@m4rtin.xyz>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MrWazaby/crypto-des/issues"
+  },
+  "homepage": "https://github.com/MrWazaby/crypto-des#readme"
+}
