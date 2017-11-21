@@ -31,6 +31,9 @@ message = permutations.splitMessage(message)
 // Step 2
 message[1] = permutations.permutation(message[1], expansionTable)
 masterKey = permutations.splitMessage(masterKey)
+
+console.log(masterKey)
+
 masterKey[0] = permutations.permutation(masterKey[0], permutationsTable.pc1left)
 masterKey[1] = permutations.permutation(masterKey[1], permutationsTable.pc1right)
 
