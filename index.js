@@ -30,7 +30,6 @@ message = permutations.splitMessage(message)
 
 // Step 2
 message[1] = permutations.permutation(message[1], expansionTable)
-masterKey = permutations.permutation(masterKey, permutationsTable.pc1left.concat(permutationsTable.pc1right))
-masterKey = permutations.splitMessage(masterKey)
+masterKey = permutations.rounds(masterKey, permutationsTable.pc1left.concat(permutationsTable.pc1right), permutationsTable.keyShift)
 
-console.log(masterKey)
+// console.log(masterKey)

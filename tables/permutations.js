@@ -26,10 +26,16 @@ pc1right = [
   7,	62,	54,	46,	38,	30,	22,
   14,	6,	61,	53,	45,	37,	29,
   21,	13,	5,	28,	20,	12,	4
-];
+]
+
+keyShift =
+[
+  1,2,4,6,8,10,12,15,17,19,21,23,25,27,28
+]
 
 module.exports = {
   initPerm : initPerm,
   pc1left: pc1left,
-  pc1right: pc1right
+  pc1right: pc1right,
+  keyShift: keyShift
 }
