@@ -13,6 +13,9 @@ masterKey = require('./tables/masterKey')
 // Require functions
 permutations = require('./lib/permutations')
 
+// Variables
+var subKeys
+
 message = [
   1 , 2 , 3 , 4 , 5 , 6 , 7 , 8 ,
   9 , 10, 11, 12, 13, 14, 15, 16,
@@ -30,6 +33,8 @@ message = permutations.splitMessage(message)
 
 // Step 2
 message[1] = permutations.permutation(message[1], expansionTable)
-masterKey = permutations.rounds(masterKey, permutationsTable.pc1left.concat(permutationsTable.pc1right), permutationsTable.keyShift)
+subKeys = permutations.rounds(masterKey, permutationsTable.pc1left.concat(permutationsTable.pc1right), permutationsTable.keyShift, permutationsTable.pc2)
+
+console.log(subKeys)
 
 // console.log(masterKey)
