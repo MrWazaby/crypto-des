@@ -1,0 +1,13 @@
+Permutation Initiale :: ok
+Scindement en blocs de 32 bits :: ok
+
+Fonction d'expansion :: ok
+OU exclusif avec la clé :: soon
+Fonction de substitution :: ok
+Permutation :: soon
+OU exclusif :: soon
+
+
+Permutation initiale inverse :: ok
+
+https://www.tutorialspoint.com/cryptography/data_encryption_standard.htm
