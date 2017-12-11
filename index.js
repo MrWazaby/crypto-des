@@ -27,6 +27,13 @@ message = [
   1, 1, 1, 1, 0, 1, 0, 0
 ]
 
+console.log("DES NodeJS Implementation...")
+console .log("Original message :")
+permutations.displayArray(message)
+console.log("Original master key :")
+permutations.displayArray(masterKey)
+
+/*
 // Step 1
 message = permutations.permutation(message, permutationsTable.initPerm)
 message = permutations.splitMessage(message)
@@ -38,4 +45,4 @@ subKeys = permutations.rounds(masterKey, permutationsTable.pc1left.concat(permut
 
 console.log(subKeys)
 
-// console.log(masterKey)
+// console.log(masterKey) */

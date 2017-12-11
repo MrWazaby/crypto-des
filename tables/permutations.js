@@ -128,7 +128,7 @@ module.exports = {
   pc1right: pc1right,
   keyShift: keyShift,
   pc2: pc2,
-  sBoxs: sBoxs,
+  sBoxes: sBoxes,
   permut32: permut32,
   reversePerm: reversePerm
 }
