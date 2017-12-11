@@ -51,6 +51,15 @@ for(var i = 0; i < 16; i++) {
   console.log("---- Round " + (i + 1) + " ----")
   console.log("Used subkey : ")
   permutations.displayArray(subKeys[i])
+  message[1] = permutations.permutation(message[1], expansionTable, false)
+  console.log("Extanded Right Block :")
+  permutations.displayArray(message[1])
+  message[1] = permutations.arrayXOR(message[1], subKeys[i])
+  console.log("Right block after XOR :")
+  permutations.displayArray(message[1])
+  message[1] = permutations.computeSBoxs(message[1], permutationsTable.sBoxes)
+  console.log("Right block after sBoxes :")
+  permutations.displayArray(message[1])
 }
 
 /*
