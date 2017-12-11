@@ -27,11 +27,17 @@ message = [
   1, 1, 1, 1, 0, 1, 0, 0
 ]
 
-console.log("DES NodeJS Implementation...")
+console.log("DES NodeJS Implementation...\n")
 console .log("Original message :")
 permutations.displayArray(message)
 console.log("Original master key :")
 permutations.displayArray(masterKey)
+
+console.log("\n===== Initial permutation =====")
+message = permutations.permutation(message, permutationsTable.initPerm)
+console.log("New message :")
+permutations.displayArray(message)
+
 
 /*
 // Step 1
