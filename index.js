@@ -38,6 +38,20 @@ message = permutations.permutation(message, permutationsTable.initPerm)
 console.log("New message :")
 permutations.displayArray(message)
 
+console.log("\n===== Split in two blocks =====")
+message = permutations.splitMessage(message)
+console.log("First block :")
+permutations.displayArray(message[0])
+console.log("Second block :")
+permutations.displayArray(message[1])
+
+console.log("\n==== Rounds (x16) =====")
+subKeys = permutations.generateSubKey(masterKey, permutationsTable.pc1left.concat(permutationsTable.pc1right), permutationsTable.keyShift, permutationsTable.pc2)
+for(var i = 0; i < 16; i++) {
+  console.log("---- Round " + (i + 1) + " ----")
+  console.log("Used subkey : ")
+  permutations.displayArray(subKeys[i])
+}
 
 /*
 // Step 1
