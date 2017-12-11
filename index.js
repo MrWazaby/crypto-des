@@ -60,18 +60,22 @@ for(var i = 0; i < 16; i++) {
   message[1] = permutations.computeSBoxs(message[1], permutationsTable.sBoxes)
   console.log("Right block after sBoxes :")
   permutations.displayArray(message[1])
+  message[1] = permutations.permutation(message[1], permutationsTable.permut32)
+  console.log("Right block after permutation :")
+  permutations.displayArray(message[1])
+  tmp = message[0]
+  message[0] = permutations.arrayXOR(message[1], message[0])
+  message[1] = tmp
+  console.log("First block after XOR :")
+  permutations.displayArray(message[0])
+  console.log("Second block after XOR :")
+  permutations.displayArray(message[1])
 }
 
-/*
-// Step 1
-message = permutations.permutation(message, permutationsTable.initPerm)
-message = permutations.splitMessage(message)
-
-// Step 2
-message[1] = permutations.permutation(message[1], expansionTable)
-subKeys = permutations.rounds(masterKey, permutationsTable.pc1left.concat(permutationsTable.pc1right), permutationsTable.keyShift, permutationsTable.pc2)
-
-
-console.log(subKeys)
-
-// console.log(masterKey) */
+console.log("\n==== Final permutation ====")
+message = message[0].concat(message[1])
+console.log("Stick left and righ :")
+permutations.displayArray(message)
+message = permutations.permutation(message, permutationsTable.reversePerm)
+console.log("Message after permutation :")
+permutations.displayArray(message)
