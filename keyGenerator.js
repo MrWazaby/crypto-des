@@ -6,6 +6,7 @@
  * MARTIN Alexandre <alexandre.martin@efrei.net>
  */
 
+// Generate a random key 
 var key = "";
 
 for(var i = 0; i < 8; i++) {
