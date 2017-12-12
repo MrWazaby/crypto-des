@@ -20,7 +20,7 @@ message = [0,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1,0,0,0,0,1,1,1,1,0,0,0
 
 // Start of the main script
 console.log("DES NodeJS Implementation...\n")
-console .log("Original message :")
+console.log("Original message :")
 arrayOperations.displayArray(message)
 console.log("Original master key :")
 arrayOperations.displayArray(masterKey)
