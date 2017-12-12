@@ -25,7 +25,7 @@ console.log("Original master key :")
 permutations.displayArray(masterKey)
 
 console.log("\n===== Initial permutation =====")
-message = permutations.permutation(message, permutationsTable.initPerm)
+message = permutations.permutation(message, permutationsTable.initPerm, false)
 console.log("New message :")
 permutations.displayArray(message)
 
@@ -39,6 +39,7 @@ permutations.displayArray(message[1])
 console.log("\n==== Rounds (x16) =====")
 subKeys = permutations.generateSubKey(masterKey, permutationsTable.pc1left.concat(permutationsTable.pc1right), permutationsTable.keyShift, permutationsTable.pc2)
 for(var i = 0; i < 16; i++) {
+  tmp = message[1]
   console.log("---- Round " + (i + 1) + " ----")
   console.log("Used subkey : ")
   permutations.displayArray(subKeys[i])
@@ -51,12 +52,11 @@ for(var i = 0; i < 16; i++) {
   message[1] = permutations.computeSBoxs(message[1], permutationsTable.sBoxes)
   console.log("Right block after sBoxes :")
   permutations.displayArray(message[1])
-  message[1] = permutations.permutation(message[1], permutationsTable.permut32)
+  message[1] = permutations.permutation(message[1], permutationsTable.permut32, false)
   console.log("Right block after permutation :")
   permutations.displayArray(message[1])
-  tmp = message[0]
-  message[0] = permutations.arrayXOR(message[1], message[0])
-  message[1] = tmp
+  message[1] = permutations.arrayXOR(message[1], message[0])
+  message[0] = tmp
   console.log("First block after XOR :")
   permutations.displayArray(message[0])
   console.log("Second block after XOR :")
@@ -64,9 +64,9 @@ for(var i = 0; i < 16; i++) {
 }
 
 console.log("\n==== Final permutation ====")
-message = message[0].concat(message[1])
+message = message[1].concat(message[0])
 console.log("Stick left and righ :")
 permutations.displayArray(message)
-message = permutations.permutation(message, permutationsTable.reversePerm)
+message = permutations.permutation(message, permutationsTable.reversePerm, false)
 console.log("Message after permutation :")
 permutations.displayArray(message)
